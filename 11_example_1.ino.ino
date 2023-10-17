@@ -77,10 +77,10 @@ void loop() {
   dist_ema = dist_raw;
 
   // adjust servo position according to the USS read value
- if(dist_ema<=180) {
+ if(dist_ema<=_DIST_MIN) {
     myservo.writeMicroseconds(1000);
   }
-  if(dist_ema>180 && dist_ema<360) {
+  if(dist_ema>_DIST_MIN && dist_ema<_DIST_MAX) {
     _DUTY_MAP = map(dist_ema,180,360,_DUTY_MIN,_DUTY_MAX);
     Serial.print(_DUTY_MAP);
     myservo.writeMicroseconds(_DUTY_MAP);
@@ -89,7 +89,7 @@ void loop() {
     //     {Serial.println(_DUTY_MAP);}
     // }
   }
-  if (dist_ema >= 360) {
+  if (dist_ema >= _DIST_MAX) {
     myservo.writeMicroseconds(2700);
   }
 
