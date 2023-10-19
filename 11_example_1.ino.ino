@@ -27,7 +27,7 @@
 // NEEDS TUNING (servo by servo)
  
 #define _DUTY_MIN 600 // servo full clockwise position (0 degree)
-#define _DUTY_NEU 1500 // servo neutral position (90 degree)
+#define _DUTY_NEU 1600 // servo neutral position (90 degree)
 #define _DUTY_MAX 2600 // servo full counterclockwise position (180 degree)
 long _DUTY_MAP;
 // global variables
